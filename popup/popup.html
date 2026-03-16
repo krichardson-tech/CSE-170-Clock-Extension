@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FocusGuard</title>
+  <style>
+    body { width: 350px; font-family: sans-serif; margin: 0; padding: 0; }
+    .tab-container { display: flex; width: 100%; border-bottom: 1px solid #ddd; }
+    .tab-btn { flex: 1; padding: 12px; border: none; background: none; cursor: pointer; }
+    .tab-btn.active { color: #2196F3; border-bottom: 3px solid #2196F3; font-weight: bold; }
+    .tab-content { display: none; padding: 20px; text-align: center; }
+    .tab-content.active { display: block; }
+  </style>
 </head>
 <body>
-  
+
+  <nav class="tab-container">
+    <button class="tab-btn active" data-target="pomodoro">Pomodoro</button>
+    <button class="tab-btn" data-target="timer">Timer</button>
+    <button class="tab-btn" data-target="settings">Settings</button>
+  </nav>
+
+  <div id="pomodoro" class="tab-content active"><h1>Pomodoro Time</h1></div>
+  <div id="timer" class="tab-content"><h1>Timer</h1></div>
+  <div id="settings" class="tab-content"><h1>Settings</h1></div>
+
+  <script src="popup.js"></script>
 </body>
 </html>
