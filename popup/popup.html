@@ -2,12 +2,13 @@
 <html>
 <head>
   <style>
-    body { width: 350px; font-family: sans-serif; margin: 0; padding: 0; }
-    .tab-container { display: flex; width: 100%; border-bottom: 1px solid #ddd; }
+    body { width: 350px; font-family: sans-serif; margin: 0; }
+    .tab-container { display: flex; border-bottom: 1px solid #ddd; }
     .tab-btn { flex: 1; padding: 12px; border: none; background: none; cursor: pointer; }
     .tab-btn.active { color: #2196F3; border-bottom: 3px solid #2196F3; font-weight: bold; }
-    .tab-content { display: none; padding: 20px; text-align: center; }
+    .tab-content { display: none; height: 300px; }
     .tab-content.active { display: block; }
+    iframe { width: 100%; height: 100%; border: none; }
   </style>
 </head>
 <body>
@@ -18,9 +19,17 @@
     <button class="tab-btn" data-target="settings">Settings</button>
   </nav>
 
-  <div id="pomodoro" class="tab-content active"><h1>Pomodoro Time</h1></div>
-  <div id="timer" class="tab-content"><h1>Timer</h1></div>
-  <div id="settings" class="tab-content"><h1>Settings</h1></div>
+  <div id="pomodoro" class="tab-content active">
+    <iframe src="pages/pomodoro.html"></iframe>
+  </div>
+
+  <div id="timer" class="tab-content">
+    <iframe src="pages/timer.html"></iframe>
+  </div>
+
+  <div id="settings" class="tab-content">
+    <iframe src="pages/settings.html"></iframe>
+  </div>
 
   <script src="popup.js"></script>
 </body>
